@@ -60,6 +60,7 @@ set -g @tpm_plugins '              \
   tmux-plugins/tmux-open           \
   tmux-plugins/tmux-sidebar        \
   tmux-plugins/tmux-pain-control   \
+  #tmux-plugins/tmux-logging \
 '
 # Other examples:
 # github_username/plugin_name    \
