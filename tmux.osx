@@ -7,6 +7,25 @@ source /usr/local/lib/python2.7/site-packages/powerline/bindings/tmux/powerline.
 set-option -g default-terminal "screen-256color"
 #set-option -g default-shell /usr/bin/zsh
 
+bind | split-window -h
+bind - split-window -v
+
+# reload config
+bind r source-file ~/.tmux.conf \; display-message "Config reloaded..."
+
+# list panes
+bind-key Space list-panes
+
+# break-pane
+bind-key Enter break-pane
+
+
+# shortcut for synchronize-panes toggle
+# START:sync
+bind C-s set-window-option synchronize-panes
+# END:sync
+#
+
 # Mouse mode
 set -g mouse-utf8 on
 set -g mouse on
