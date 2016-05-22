@@ -5,10 +5,14 @@ bind Space send-prefix
 
 #### POWERLINE
 source /usr/local/lib/python2.7/site-packages/powerline/bindings/tmux/powerline.conf
+
 set-option -g default-terminal "screen-256color"
 #set-option -g default-shell /usr/bin/zsh
 
-bind | split-window -h
+# increase scrollback buffer size
+set -g history-limit 50000
+
+bind \ split-window -h
 bind - split-window -v
 
 # reload config
@@ -39,6 +43,9 @@ bind -n S-left prev
 bind -n S-right next
 bind -n C-left swap-window -t -1
 bind -n C-right swap-window -t +1
+
+#Maximize Panes
+bind-key | resize-pane -Z \; display-message "Zoom zoom zoom"
 
 # vi mode
 setw -g mode-keys vi
